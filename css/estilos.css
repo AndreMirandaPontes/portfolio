@@ -350,6 +350,10 @@ section {
   width: 65%;
 }
 
+.services {
+  margin-top: 3rem;
+}
+
 .services .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
