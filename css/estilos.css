@@ -552,7 +552,6 @@ section {
 @media (min-width: 1200px){
   .portfolio .box-container{
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1100px;   /* limite total do grid */
     margin: 0 auto;      /* centraliza */
   }
 }
