@@ -413,8 +413,11 @@ section {
 .portfolio .box-container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1fr;
-  /* Se quiser, pode tirar o style="margin: 0 2rem;" do HTML e usar padding aqui: */
+  grid-template-columns: 1fr;   /* 1 coluna no mobile */
+  width: 100%;                  /* ocupa toda a largura disponível */
+  max-width: 1100px;            /* limite total do grid em telas grandes */
+  margin: 0 auto;               /* centraliza o grid */
+  /* Se quiser, pode remover o style="margin: 0 2rem;" do HTML e usar padding aqui: */
   /* padding: 0 2rem; */
 }
 
@@ -425,26 +428,20 @@ section {
   }
 }
 
-/* os cards não têm altura fixa; deixam o vídeo mandar na altura */
+/* cards: ocupam 100% da coluna e não têm altura fixa */
 .portfolio .box-container .box {
+  width: 100%;
   border-radius: .5rem;
   overflow: hidden;
   position: relative;
   border: 1rem solid transparent;
-  margin: 0 auto;
-  height: auto;
-  /* remove a altura rígida */
+  height: auto;                 /* remove altura rígida */
   box-shadow: var(--box-shadow);
-  background: #000;
-  /* fundo preto enquanto carrega */
-}
-
-/* mantém 16:9 em qualquer largura */
-.portfolio .box-container .box{
+  background: #000;             /* fundo preto enquanto carrega */
+  /* mantém 16:9 em qualquer largura */
   aspect-ratio: 16 / 9;
-  max-height: 600px;  /* aumenta a altura máxima */
+  max-height: 600px;            /* altura máxima confortável em desktops */
 }
-
 
 /* fallback para navegadores sem aspect-ratio */
 @supports not (aspect-ratio: 16 / 9) {
@@ -452,7 +449,6 @@ section {
     height: 0;
     padding-bottom: 56.25%;
   }
-
   .portfolio .box-container .box iframe {
     position: absolute;
     inset: 0;
