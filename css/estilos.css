@@ -436,9 +436,11 @@ section {
 }
 
 /* mantém 16:9 em qualquer largura */
-.portfolio .box-container .box {
+.portfolio .box-container .box{
   aspect-ratio: 16 / 9;
+  max-height: 600px;  /* aumenta a altura máxima */
 }
+
 
 /* fallback para navegadores sem aspect-ratio */
 @supports not (aspect-ratio: 16 / 9) {
