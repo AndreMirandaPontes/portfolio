@@ -519,6 +519,12 @@ section {
 }
 
 /* media queries */
+@media (min-width: 1024px){
+  .portfolio .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  }
+}
+
 @media (max-width:1170px) {
   html {
     font-size: 55%;
@@ -539,6 +545,14 @@ section {
 
   #menu-btn {
     display: initial;
+  }
+}
+
+@media (min-width: 1200px){
+  .portfolio .box-container{
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1100px;   /* limite total do grid */
+    margin: 0 auto;      /* centraliza */
   }
 }
 
